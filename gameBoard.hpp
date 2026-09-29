@@ -2,18 +2,19 @@
 
 #pragma once
 #include<vector>
+#include"tetromino.hpp"
 using namespace std;
 
 class gameBoard{
     private:
     int length;
     int breadth;
-    vector<vector<int>> used_spaces;
 
     public:
+    vector<coords> used_spaces;
     gameBoard();
-    void spawn();
-    void softDrop();
-    void hardDrop();
-    bool canPlace(coords *);
+    Tetromino* spawn();
+    void softDrop(Tetromino *);
+    void hardDrop(Tetromino *);
+    bool canPlace(coords (&c)[4]);
 };

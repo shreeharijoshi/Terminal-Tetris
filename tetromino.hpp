@@ -11,6 +11,14 @@ typedef struct coords{
         x = a;
         y = b;
     }
+    bool operator ==(coords c){
+        if ((x == c.x) && (y == c.y)) return true;
+        return false;
+    }
+    coords operator ++(){
+        coords newc = coords(x, y+1);
+        return newc;
+    }
 } coords;
 
 enum Rotation{
@@ -27,6 +35,9 @@ class Tetromino{
     Rotation rotation;
 
     public:
+    virtual coords * getCoords(){
+        return pos;
+    }
     virtual ~Tetromino();
 };
 

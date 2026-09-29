@@ -2,7 +2,6 @@
 
 #include<iostream>
 #include "tetromino.hpp"
-#include "gameBoard.hpp"
 using namespace std;
 
 I_tetromino::I_tetromino(){
@@ -51,10 +50,10 @@ S_tetromino::S_tetromino(){
 }
 
 T_tetromino::T_tetromino(){
-    pos[0] = coords(0,0);
-    pos[1] = coords(0,1);
-    pos[2] = coords(0,2);
-    pos[3] = coords(1,1);
+    pos[0] = coords(0,1);
+    pos[1] = coords(1,0);
+    pos[2] = coords(1,1);
+    pos[3] = coords(1,2);
     drop_speed = 0;
     rotation = nil;
 }
