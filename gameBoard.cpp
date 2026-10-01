@@ -8,7 +8,6 @@ using namespace std;
 gameBoard::gameBoard(){
     length = 20;
     breadth = 10;
-    // used_spaces = {{}};
 }
 
 Tetromino* gameBoard::spawn(){
@@ -44,14 +43,29 @@ Tetromino* gameBoard::spawn(){
 
 void gameBoard::softDrop(Tetromino *t){}
 
-void gameBoard::hardDrop(Tetromino *t){}
+void gameBoard::hardDrop(Tetromino *t){
+    coords * currentPos = t->getCoords();
+    while(canPlace(currentPos)){
+        for(int i=0; i<4; i++){
+            currentPos[i].y++;
+        }
+    }
+    for(int i=0; i<4; i++){
+        used_spaces.push_back(currentPos[i]);
+    }
+}
 
-bool gameBoard::canPlace(coords (&c)[4]){
+bool gameBoard::canPlace(coords *c){
     for(auto c1 : used_spaces){
-        for(auto c2 : c){
-            if (c1 == c2){
+        for(int i=0; i<4; i++){
+            if (c1 == *(c+i)){
                 return false;
             }
+        }
+    }
+    for(int i=0; i<4; i++){
+        if (c[i].x < 0 || c[i].y < 0 || c[i].x >= 10 || c[i].y >= 20){
+            return false;
         }
     }
     return true;

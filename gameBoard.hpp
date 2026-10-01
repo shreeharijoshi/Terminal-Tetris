@@ -16,5 +16,5 @@ class gameBoard{
     Tetromino* spawn();
     void softDrop(Tetromino *);
     void hardDrop(Tetromino *);
-    bool canPlace(coords (&c)[4]);
+    bool canPlace(coords *);
 };
