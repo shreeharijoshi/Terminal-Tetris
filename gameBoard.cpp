@@ -67,6 +67,8 @@ bool gameBoard::canPlace(coords *c){
         if (c[i].x < 0 || c[i].y < 0 || c[i].x >= 10 || c[i].y >= 20){
             return false;
         }
+
+        
     }
     return true;
 }
