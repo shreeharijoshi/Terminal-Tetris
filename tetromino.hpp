@@ -1,6 +1,7 @@
 // Header file for tetromino classes
 
 #pragma once
+#include"gameBoard.hpp"
 using namespace std;
 
 typedef struct coords{
@@ -35,50 +36,67 @@ class Tetromino{
     Rotation rotation;
 
     public:
-    virtual coords * getCoords(){
+    coords * getCoords(){
         return pos;
     }
+    virtual void move_left(gameBoard g) = 0;
+    virtual void move_right(gameBoard g) = 0;
+    virtual void rotate(gameBoard g);
     virtual ~Tetromino();
 };
 
 class I_tetromino : public Tetromino{
     public:
     I_tetromino();
-    void rotate_tetromino();
+    void rotate(gameBoard g);
+    void move_left(gameBoard g);
+    void move_right(gameBoard g);
 };
 
 class J_tetromino : public Tetromino{
     public:
     J_tetromino();
-    void rotate_tetromino();
+    void rotate(gameBoard g);
+    void move_left(gameBoard g);
+    void move_right(gameBoard g);
 };
 
 class L_tetromino : public Tetromino{
     public:
     L_tetromino();
-    void rotate_tetromino();
+    void rotate(gameBoard g);
+    void move_left(gameBoard g);
+    void move_right(gameBoard g);
 };
 
 class O_tetromino : public Tetromino{
     public:
     O_tetromino();
-    void rotate_tetromino();
+    void rotate(gameBoard g);
+    void move_left(gameBoard g);
+    void move_right(gameBoard g);
 };
 
 class S_tetromino : public Tetromino{
     public:
     S_tetromino();
-    void rotate_tetromino();
+    void rotate(gameBoard g);
+    void move_left(gameBoard g);
+    void move_right(gameBoard g);
 };
 
 class T_tetromino : public Tetromino{
     public:
     T_tetromino();
-    void rotate_tetromino();
+    void rotate(gameBoard g);
+    void move_left(gameBoard g);
+    void move_right(gameBoard g);
 };
 
 class Z_tetromino : public Tetromino{
     public:
     Z_tetromino();
-    void rotate_tetromino();
+    void rotate(gameBoard g);
+    void move_left(gameBoard g);
+    void move_right(gameBoard g);
 };
