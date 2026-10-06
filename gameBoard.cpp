@@ -41,15 +41,29 @@ Tetromino* gameBoard::spawn(){
     return t;
 }
 
-void gameBoard::softDrop(Tetromino *t){}
+void gameBoard::softDrop(Tetromino *t){
+    coords * currentPos = t->getCoords();
+    coords currentOrigin = t->getOrigin();
+    currentOrigin.y++;
+    for(int i=0; i<4; i++){
+        currentPos[i] = currentPos[i] + currentOrigin;
+    }
+    if(canPlace(currentPos)){
+        t->setOrigin(currentOrigin);
+    }
+
+}
 
 void gameBoard::hardDrop(Tetromino *t){
     coords * currentPos = t->getCoords();
+    coords currentOrigin = t->getOrigin();
     while(canPlace(currentPos)){
+        currentOrigin.y++;
         for(int i=0; i<4; i++){
-            currentPos[i].y++;
+            currentPos[i] = currentPos[i] + currentOrigin;
         }
     }
+    t->setOrigin(currentOrigin);
     for(int i=0; i<4; i++){
         used_spaces.push_back(currentPos[i]);
     }
@@ -64,7 +78,7 @@ bool gameBoard::canPlace(coords *c){
         }
     }
     for(int i=0; i<4; i++){
-        if (c[i].x < 0 || c[i].y < 0 || c[i].x >= 10 || c[i].y >= 20){
+        if (c[i].x < 0 || c[i].y < 0 || c[i].x >= breadth || c[i].y >= length){
             return false;
         }
     }
