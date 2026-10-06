@@ -1,11 +1,17 @@
-// Header file for renderer class
-// Will probably be the one dealing with ncurses and all
-// Needs more work
-
 #pragma once
 
+class gameBoard;
+class Tetromino;
+class Score;
+
 class Renderer{
-    public:
-    void drawBoard();
-    void clearRow();
+public:
+    void render(const gameBoard& board,
+                const Tetromino& activePiece,
+                const Tetromino& nextPiece,
+                const Score& score);
+
+    void renderGameOver(const Score& score);
+
+    void renderControls();
 };

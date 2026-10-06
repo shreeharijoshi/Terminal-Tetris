@@ -9,12 +9,20 @@ class gameBoard{
     private:
     int length;
     int breadth;
+    coords pivot;
 
     public:
     vector<coords> used_spaces;
     gameBoard();
-    Tetromino* spawn();
-    void softDrop(Tetromino *);
+    int getLength() const;
+    int getBreadth() const;
+    coords getPivot() const;
+    void setPivot(const coords& position);
+    coords toBoardCoordinate(const coords& localOffset) const;
+    void moveLeft(Tetromino *);
+    void moveRight(Tetromino *);
+    bool softDrop(Tetromino *);
     void hardDrop(Tetromino *);
-    bool canPlace(coords *);
+    int clearFullRows();
+    bool canPlace(const coords *) const;
 };

@@ -1,63 +1,45 @@
 #include"tetromino.hpp"
+#include"gameBoard.hpp"
 
 T_tetromino::T_tetromino(){
-    pos[0] = coords(1,0);
-    pos[1] = coords(0,1);
-    pos[2] = coords(1,1);
-    pos[3] = coords(2,1);
-    origin = coords(3,0);
+    pos[0] = coords(0,-1);
+    pos[1] = coords(-1,0);
+    pos[2] = coords(0,0);
+    pos[3] = coords(1,0);
     drop_speed = 0;
     rotation = nil;
 }
 
-void T_tetromino::rotate(gameBoard g){
+void T_tetromino::rotate(gameBoard& board){
+    coords candidatePos[4];
+    Rotation candidateRotation;
     if(rotation == nil){
-        pos[0] = coords(1,0);
-        pos[1] = coords(1,1);
-        pos[2] = coords(2,1);
-        pos[3] = coords(1,2);
-        rotation = Rotation::right;
+        candidatePos[0] = coords(1,0);
+        candidatePos[1] = coords(0,-1);
+        candidatePos[2] = coords(0,0);
+        candidatePos[3] = coords(0,1);
+        candidateRotation = Rotation::right;
     }
     else if(rotation == Rotation::right){
-        pos[0] = coords(0,0);
-        pos[1] = coords(1,0);
-        pos[2] = coords(2,0);
-        pos[3] = coords(1,1);
-        rotation = Rotation::bottom;
+        candidatePos[0] = coords(0,1);
+        candidatePos[1] = coords(1,0);
+        candidatePos[2] = coords(0,0);
+        candidatePos[3] = coords(-1,0);
+        candidateRotation = Rotation::bottom;
     }
     else if(rotation == Rotation::bottom){
-        pos[0] = coords(2,0);
-        pos[1] = coords(1,1);
-        pos[2] = coords(2,1);
-        pos[3] = coords(2,2);
-        rotation = Rotation::left;
+        candidatePos[0] = coords(-1,0);
+        candidatePos[1] = coords(0,1);
+        candidatePos[2] = coords(0,0);
+        candidatePos[3] = coords(0,-1);
+        candidateRotation = Rotation::left;
     }
     else{
-        pos[0] = coords(1,0);
-        pos[1] = coords(0,1);
-        pos[2] = coords(1,1);
-        pos[3] = coords(2,1);
-        rotation = Rotation::nil;
+        candidatePos[0] = coords(0,-1);
+        candidatePos[1] = coords(-1,0);
+        candidatePos[2] = coords(0,0);
+        candidatePos[3] = coords(1,0);
+        candidateRotation = Rotation::nil;
     }
-}
-
-void T_tetromino::move_left(gameBoard g){
-    origin.x--;
-    coords *newc = pos;
-    for(int i=0; i<4; i++){
-        newc[i] = pos[i] + origin;
-    } 
-    if(!g.canPlace(newc)){
-        origin.x++;
-    }
-}
-void T_tetromino::move_right(gameBoard g){
-    origin.x++;
-    coords *newc = pos;
-    for(int i=0; i<4; i++){
-        newc[i] = pos[i] + origin;
-    } 
-    if(!g.canPlace(newc)){
-        origin.x--;
-    }
+    tryRotate(board, candidatePos, candidateRotation);
 }
