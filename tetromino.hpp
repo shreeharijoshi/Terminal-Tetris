@@ -16,6 +16,10 @@ typedef struct coords{
         if ((x == c.x) && (y == c.y)) return true;
         return false;
     }
+    coords operator +(coords c){
+        coords newc = coords(x+c.x, y+c.y);
+        return newc;
+    }
     coords operator ++(){
         coords newc = coords(x, y+1);
         return newc;
@@ -32,12 +36,20 @@ enum Rotation{
 class Tetromino{
     protected:
     coords pos[4]; 
+    coords origin;
     int drop_speed;
     Rotation rotation;
 
     public:
     coords * getCoords(){
         return pos;
+    }
+    coords getOrigin(){
+        return origin;
+    }
+    void setOrigin(coords c){
+        origin.x = c.x;
+        origin.y = c.y;
     }
     virtual void move_left(gameBoard g) = 0;
     virtual void move_right(gameBoard g) = 0;
