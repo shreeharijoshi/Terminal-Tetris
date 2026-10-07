@@ -207,6 +207,7 @@ void Renderer::renderGameOver(const Score& score)
     std::cout << "Level       : " << score.getLevel() << "\n\n";
 
     std::cout << "Press Q or Escape to quit.\n";
+    std::cout << "Press R to restart.\n";
 
     std::cout.flush();
 }
