@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\gameBoard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\inputHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\score.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\tetromino.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\i_tetromino.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\j_tetromino.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\l_tetromino.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\o_tetromino.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\s_tetromino.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\t_tetromino.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\z_tetromino.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\tetrominoFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{08EC8921-ADB3-3563-97F1-213EEFFF6BA0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

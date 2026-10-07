@@ -63,6 +63,7 @@ void InputHandler::shutdown() {
 //   6. If the key is unrecognised, return GameAction::None.
 // ---------------------------------------------------------------------------
 GameAction InputHandler::pollAction() {
+
     // Step 1 & 2: non-blocking check
     if (!_kbhit()) {
         return GameAction::None;
@@ -73,42 +74,63 @@ GameAction InputHandler::pollAction() {
 
     // Step 4: handle extended (arrow / function) keys
     if (key == EXTENDED_KEY_PREFIX_1 || key == EXTENDED_KEY_PREFIX_2) {
+
         // Read the second byte to find out which arrow key it is
         int extKey = _getch();
 
         switch (extKey) {
-            case ARROW_LEFT:  return GameAction::MoveLeft;
-            case ARROW_RIGHT: return GameAction::MoveRight;
-            case ARROW_DOWN:  return GameAction::SoftDrop;
-            case ARROW_UP:    return GameAction::Rotate;
-            default:          return GameAction::None;
+            case ARROW_LEFT:
+                return GameAction::MoveLeft;
+
+            case ARROW_RIGHT:
+                return GameAction::MoveRight;
+
+            case ARROW_DOWN:
+                return GameAction::SoftDrop;
+
+            case ARROW_UP:
+                return GameAction::Rotate;
+
+            default:
+                return GameAction::None;
         }
     }
 
     // Step 5: handle regular character keys
     switch (key) {
+
         // Move left
-        case 'A': case 'a':
+        case 'A':
+        case 'a':
             return GameAction::MoveLeft;
 
         // Move right
-        case 'D': case 'd':
+        case 'D':
+        case 'd':
             return GameAction::MoveRight;
 
         // Soft drop
-        case 'S': case 's':
+        case 'S':
+        case 's':
             return GameAction::SoftDrop;
 
         // Rotate
-        case 'W': case 'w':
+        case 'W':
+        case 'w':
             return GameAction::Rotate;
 
         // Hard drop
         case KEY_SPACE:
             return GameAction::HardDrop;
 
+        // Restart
+        case 'R':
+        case 'r':
+            return GameAction::Restart;
+
         // Quit
-        case 'Q': case 'q':
+        case 'Q':
+        case 'q':
         case KEY_ESC:
             return GameAction::Quit;
 

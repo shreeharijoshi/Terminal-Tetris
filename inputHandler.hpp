@@ -16,6 +16,7 @@ enum class GameAction {
     SoftDrop,   // S / Down arrow
     HardDrop,   // Space
     Rotate,     // W / Up arrow
+    Restart,    // R
     Quit        // Q / ESC
 };
 

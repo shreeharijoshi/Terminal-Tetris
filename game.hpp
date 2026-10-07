@@ -25,6 +25,9 @@ private:
     void promoteNextPiece();
     void finishCurrentPiece();
 
+    // Restart the game after Game Over
+    void restart();
+
 public:
     Game();
     void handleAction(GameAction action);

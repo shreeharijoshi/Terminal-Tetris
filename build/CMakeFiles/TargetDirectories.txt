@@ -1,0 +1,3 @@
+I:/VIT college/2nd year/sem 3/oops/cp/terminal tetris/Terminal-Tetris/build/CMakeFiles/Tetris.dir
+I:/VIT college/2nd year/sem 3/oops/cp/terminal tetris/Terminal-Tetris/build/CMakeFiles/ALL_BUILD.dir
+I:/VIT college/2nd year/sem 3/oops/cp/terminal tetris/Terminal-Tetris/build/CMakeFiles/ZERO_CHECK.dir
