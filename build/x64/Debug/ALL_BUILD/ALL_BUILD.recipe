@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\build\x64\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\build\Debug\Tetris.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>I:\VIT college\2nd year\sem 3\oops\cp\terminal tetris\Terminal-Tetris\build\x64\Debug\ALL_BUILD</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

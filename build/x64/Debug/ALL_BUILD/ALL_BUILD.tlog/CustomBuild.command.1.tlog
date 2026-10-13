@@ -1,0 +1,10 @@
+^I:\VIT COLLEGE\2ND YEAR\SEM 3\OOPS\CP\TERMINAL TETRIS\TERMINAL-TETRIS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SI:/VIT college/2nd year/sem 3/oops/cp/terminal tetris/Terminal-Tetris" "-BI:/VIT college/2nd year/sem 3/oops/cp/terminal tetris/Terminal-Tetris/build" --check-stamp-file "I:/VIT college/2nd year/sem 3/oops/cp/terminal tetris/Terminal-Tetris/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
