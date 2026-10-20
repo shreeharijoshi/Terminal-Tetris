@@ -1,0 +1,25 @@
+# Build directories
+build/
+Terminal-Tetris/build/
+
+# Executables
+*.exe
+Terminal-Tetris/tetris.exe
+
+# IDE
+*.vcxproj
+*.vcxproj.filters
+*.slnx
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+
+# SFML fetched content
+Terminal-Tetris/build/_deps/
+
+# Compiled objects
+*.obj
+*.ilk
+*.pdb
